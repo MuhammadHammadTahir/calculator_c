@@ -44,3 +44,15 @@ code {
   height: 50px;
   width: 50px;
 }
+.result {
+  margin-top: 10px;
+  font-size: 24px;
+  text-align: right;
+}
+
+.result-text {
+  background-color: #eee;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

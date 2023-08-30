@@ -7,6 +7,7 @@ function Btn(props) {
     if(props.text==='CE')
     {
       props.update('');
+      props.setResult('');
     }
     else
     {
@@ -16,36 +17,47 @@ function Btn(props) {
         {
           let newtext = props.pre.slice(0, -1);
           props.update(newtext);
+          props.setResult(newtext);
         }
         else
         {
           props.update('');
+          props.setResult('');
         }
       }
+      else if (props.text === '=') {
+        try {
+          const evalResult = eval(props.pre); 
+          props.update(evalResult.toString()); 
+          props.setResult(evalResult.toString());
+        } catch (error) {
+          console.error("Invalid expression:", error);
+          props.setResult('Invalid expression');
+        }
+      } 
       else
       {
         if(props.text==='x^2')
         {
           props.update(props.pre + '^2');
-          props.opersq=true;
         }
         else
         {
           if(props.text==='√')
           {
-            props.opersqroot=true;
+            props.update(props.pre + '√');
           }
           else
           {
             if(props.text==='.')
             {
-              props.operpoint=true;
+              props.update(props.pre + '.');
             }
             else
             {
               if(props.text==='÷'||props.text==='x'||props.text==='-'||props.text==='+')
               {
-                props.setOper(true);
+                // props.setOper(true);
               }
               else
               {
@@ -59,7 +71,7 @@ function Btn(props) {
   }
 
   const handleDisable = () => {
-    if (props.text === '÷' || props.text === 'x' || props.text === '-' || props.text === '+') {
+    if (props.text === '÷' || props.text === 'x' || props.text === '-' || props.text === '+'||props.text === '=') {
       if (props.pre.length === 0) {
         return true;
       } else {
