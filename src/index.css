@@ -11,3 +11,36 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.inpo{
+  margin-top: 60px;
+  margin-bottom: 3px;
+}
+.area{
+  resize: none;
+  max-width: 25%;
+  overflow: hidden;
+  max-height: 5%;
+
+}
+.fix{
+  display: flex;
+  justify-content: center;
+  margin-right: 4%;
+}
+
+.btnbox {
+  display: flex;
+  flex-direction: column;
+  margin-right: 4%;
+  align-items: center;
+  max-width: 100%;
+}
+.btton{
+  display: flex;
+  max-width: 40%;
+  justify-content: center;
+}
+.btn{
+  height: 50px;
+  width: 50px;
+}

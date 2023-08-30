@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import Buttons from "./components/Buttons";
+import React,{useState} from 'react'
+import Input from "./components/Input";
+import Navbar from "./components/Navbar";
+
 
 function App() {
+  const [text, setText] = useState('');
+  const [answer, setAnswer] = useState('');
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+      <Navbar/>
+    <div className="container">
+      <Input text={text} keyboard={setText}/>
+      <Buttons  write={text} setText={setText} setAnswer={setAnswer} answer={answer} />
     </div>
+    </>
   );
 }
 
