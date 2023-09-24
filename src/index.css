@@ -15,9 +15,12 @@ code {
   margin-top: 60px;
   margin-bottom: 3px;
 }
+#my-calculator{
+  max-width: 23%;
+}
 .area{
   resize: none;
-  max-width: 25%;
+  max-width: 23%;
   overflow: hidden;
   max-height: 5%;
 
@@ -43,6 +46,24 @@ code {
 .btn{
   height: 50px;
   width: 50px;
+}
+.result {
+  margin-top: 10px;
+  font-size: 24px;
+  text-align: right;
+}
+@media screen and (min-width: 320px) {
+  .container-fluid{
+    display: flex;
+    justify-content: center;
+  }
+  #my-calculator{
+    max-width: 248px;
+  }
+  .btton{
+    max-width: 100%;
+  }
+  
 }
 .result {
   margin-top: 10px;
